@@ -9,23 +9,23 @@ const ResumeLanding = () => {
         name: "Nikolas Padilla",
         title: "Software Engineer",
         about: "Passionate developer focused on creating clean, maintainable solutions with modern technologies.",
-        skills: ["C#", "Flutter", "React", "Next.js", "TypeScript"],
+        skills: ["C#", "Flutter", "React", "Next.js", "TypeScript", "Supabase"],
     };
 
     return (
-        <div className="min-h-screen bg-gray-50">
+        <div className="min-h-screen bg-background font-sans text-foreground">
             {/* Header */}
-            <header className="bg-white shadow-sm">
-                <nav className="max-w-5xl mx-auto px-4 py-4 flex justify-between items-center">
-                    <h1 className="text-xl font-bold text-gray-900">{personalInfo.name}</h1>
-                    <div className="flex gap-4">
+            <header className="bg-white shadow-md sticky top-0 z-10">
+                <nav className="max-w-5xl mx-auto px-4 py-6 flex justify-between items-center">
+                    <h1 className="text-2xl font-bold text-primary">{personalInfo.name}</h1>
+                    <div className="flex gap-6">
                         {['about', 'skills', 'contact'].map((section) => (
                             <button
                                 key={section}
                                 onClick={() => {
-                                    document.getElementById(section)?.scrollIntoView({behavior: 'smooth'});
+                                    document.getElementById(section)?.scrollIntoView({ behavior: 'smooth' });
                                 }}
-                                className="text-gray-600 hover:text-gray-900 capitalize"
+                                className="text-secondary hover:text-primary transition-colors duration-200 capitalize"
                             >
                                 {section}
                             </button>
@@ -35,40 +35,37 @@ const ResumeLanding = () => {
             </header>
 
             {/* Hero Section */}
-            <section id="about" className="max-w-5xl mx-auto px-4 py-16">
+            <section id="about" className="max-w-5xl mx-auto px-4 py-24">
                 <div className="text-center">
-                    <h2 className="text-4xl font-bold text-gray-900 mb-4">{personalInfo.title}</h2>
-                    <p className="text-xl text-gray-600 mb-8">{personalInfo.about}</p>
-                    <div className="flex justify-center gap-4">
-                        <button
-                            onClick={async () => {
-                                const response = await fetch('/nikolaspadilla_resume.pdf')
-                                const blob = await response.blob()
-                                const url = window.URL.createObjectURL(blob)
-                                const link = document.createElement('a')
-                                link.href = url
-                                link.download = "nikolas-cv.pdf"
-                                document.body.appendChild(link)
-                                link.click()
-                                link.remove()
-                                window.URL.revokeObjectURL(url)
-                            }}
-                            className="flex items-center gap-2 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
-                            <Download size={20}/>
+                    <h2 className="text-5xl font-bold text-primary mb-6">{personalInfo.title}</h2>
+                    <p className="text-2xl text-muted mb-12">{personalInfo.about}</p>
+                    <div className="flex justify-center gap-8">
+                        <a
+                            href="/nikolaspadilla_resume.pdf"
+                            download="nikolas-cv.pdf"
+                            className="flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-full hover:bg-primary-700 transition-colors duration-200">
+                            <Download size={20} />
                             Download CV
-                        </button>
+                        </a>
+                        <a
+                            href="mailto:contact@nikolaspadilla.com"
+                            className="flex items-center gap-2 text-secondary hover:text-primary transition-colors duration-200"
+                        >
+                            <Mail size={20} />
+                            Contact Me
+                        </a>
                     </div>
                 </div>
             </section>
 
             {/* Skills Section */}
-            <section id="skills" className="bg-white py-16">
+            <section id="skills" className="bg-white py-24">
                 <div className="max-w-5xl mx-auto px-4">
-                    <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">Skills</h3>
-                    <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                    <h3 className="text-3xl font-bold text-primary mb-12 text-center">Skills</h3>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {personalInfo.skills.map((skill) => (
-                            <div key={skill} className="bg-gray-50 p-4 rounded text-center">
-                                <span className="text-gray-800">{skill}</span>
+                            <div key={skill} className="bg-background p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200">
+                                <span className="text-xl font-medium text-muted">{skill}</span>
                             </div>
                         ))}
                     </div>
@@ -76,33 +73,33 @@ const ResumeLanding = () => {
             </section>
 
             {/* Contact Section */}
-            <section id="contact" className="max-w-5xl mx-auto px-4 py-16">
-                <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">Get in Touch</h3>
-                <div className="flex justify-center gap-6">
+            <section id="contact" className="max-w-5xl mx-auto px-4 py-24">
+                <h3 className="text-3xl font-bold text-primary mb-12 text-center">Get in Touch</h3>
+                <div className="flex justify-center gap-12">
                     <a
                         href="https://github.com/muddxyii"
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label="GitHub Profile"
-                        className="text-gray-600 hover:text-gray-900"
+                        className="text-secondary hover:text-primary transition-colors duration-200"
                     >
-                        <Github size={24}/>
+                        <Github size={32} />
                     </a>
                     <a
                         href="https://linkedin.com/in/nikolaspadilla"
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label="LinkedIn Profile"
-                        className="text-gray-600 hover:text-gray-900"
+                        className="text-secondary hover:text-primary transition-colors duration-200"
                     >
-                        <Linkedin size={24}/>
+                        <Linkedin size={32} />
                     </a>
                     <a
                         href="mailto:contact@nikolaspadilla.com"
                         aria-label="Email Contact"
-                        className="text-gray-600 hover:text-gray-900"
+                        className="text-secondary hover:text-primary transition-colors duration-200"
                     >
-                        <Mail size={24}/>
+                        <Mail size={32} />
                     </a>
                 </div>
             </section>
