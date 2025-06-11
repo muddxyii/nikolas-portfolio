@@ -14,12 +14,12 @@ const ResumeLanding = () => {
     about:
       "Passionate developer focused on creating clean, maintainable solutions with modern technologies. I love building beautiful, functional applications that make a difference.",
     skills: [
-      { name: "C#", icon: "💻", level: "Advanced" },
-      { name: "Flutter", icon: "📱", level: "Advanced" },
-      { name: "React", icon: "⚛️", level: "Expert" },
-      { name: "Next.js", icon: "🚀", level: "Expert" },
-      { name: "TypeScript", icon: "🔷", level: "Advanced" },
-      { name: "Supabase", icon: "🗃️", level: "Intermediate" },
+      { name: ".NET / C#", icon: "/brands/dotnet.svg", level: "Advanced" },
+      { name: "Flutter", icon: "/brands/flutter.svg", level: "Advanced" },
+      { name: "React", icon: "/brands/react.svg", level: "Expert" },
+      { name: "Next.js", icon: "/brands/nextjs.svg", level: "Expert" },
+      { name: "TypeScript", icon: "/brands/typescript.svg", level: "Advanced" },
+      { name: "Supabase", icon: "/brands/supabase.svg", level: "Intermediate" },
     ],
   };
 
@@ -140,7 +140,15 @@ const ResumeLanding = () => {
               >
                 <CardContent className="p-8 text-center">
                   <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
-                    {skill.icon}
+                    {skill.icon.startsWith("/") ? (
+                      <img
+                        src={skill.icon}
+                        alt={`${skill.name} icon`}
+                        className="w-12 h-12 mx-auto"
+                      />
+                    ) : (
+                      skill.icon
+                    )}
                   </div>
                   <h4 className="text-xl font-bold text-gray-900 mb-2">
                     {skill.name}
