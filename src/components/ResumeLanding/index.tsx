@@ -6,7 +6,6 @@ import { Download, Mail, Sparkles, Code2, Zap } from "lucide-react";
 import { Github, Linkedin } from "@/components/Icons";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 
 const ResumeLanding = () => {
   const personalInfo = {
@@ -15,12 +14,12 @@ const ResumeLanding = () => {
     about:
       "Passionate developer focused on creating clean, maintainable solutions with modern technologies. I love building beautiful, functional applications that make a difference.",
     skills: [
-      { name: ".NET / C#", icon: "/brands/dotnet.svg", level: "Advanced" },
-      { name: "Flutter", icon: "/brands/flutter.svg", level: "Advanced" },
-      { name: "React", icon: "/brands/react.svg", level: "Expert" },
-      { name: "Next.js", icon: "/brands/nextjs.svg", level: "Expert" },
-      { name: "TypeScript", icon: "/brands/typescript.svg", level: "Advanced" },
-      { name: "Supabase", icon: "/brands/supabase.svg", level: "Intermediate" },
+      { name: ".NET / C#", icon: "/brands/dotnet.svg" },
+      { name: "Flutter", icon: "/brands/flutter.svg" },
+      { name: "React", icon: "/brands/react.svg" },
+      { name: "Next.js", icon: "/brands/nextjs.svg" },
+      { name: "TypeScript", icon: "/brands/typescript.svg" },
+      { name: "Supabase", icon: "/brands/supabase.svg" },
     ],
   };
 
@@ -172,15 +171,9 @@ const ResumeLanding = () => {
                       skill.icon
                     )}
                   </div>
-                  <h4 className="text-lg md:text-xl font-bold text-gray-900 mb-2">
+                  <h4 className="text-lg md:text-xl font-bold text-gray-900">
                     {skill.name}
                   </h4>
-                  <Badge
-                    variant="secondary"
-                    className="bg-gradient-to-r from-purple-100 to-blue-100 text-purple-700 border-0 font-medium text-xs md:text-sm"
-                  >
-                    {skill.level}
-                  </Badge>
                 </CardContent>
               </Card>
             ))}
