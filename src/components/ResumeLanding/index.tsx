@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { Download, Mail, Sparkles, Code2, Zap } from "lucide-react";
 import { Github, Linkedin } from "@/components/Icons";
 import { Button } from "@/components/ui/button";
@@ -141,9 +142,11 @@ const ResumeLanding = () => {
                 <CardContent className="p-8 text-center">
                   <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
                     {skill.icon.startsWith("/") ? (
-                      <img
+                      <Image
                         src={skill.icon}
                         alt={`${skill.name} icon`}
+                        width={48}
+                        height={48}
                         className="w-12 h-12 mx-auto"
                       />
                     ) : (
