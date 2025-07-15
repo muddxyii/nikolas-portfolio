@@ -1,25 +1,25 @@
-"use client";
+'use client';
 
-import React from "react";
-import Image from "next/image";
-import { Download, Mail, Sparkles, Code2, Zap } from "lucide-react";
-import { Github, Linkedin } from "@/components/Icons";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
+import React from 'react';
+import Image from 'next/image';
+import { Download, Mail, Sparkles, Code2, Zap } from 'lucide-react';
+import { Github, Linkedin } from '@/components/Icons';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent } from '@/components/ui/card';
 
 const ResumeLanding = () => {
   const personalInfo = {
-    name: "Nikolas Padilla",
-    title: "Software Engineer",
+    name: 'Nikolas Padilla',
+    title: 'Software Engineer',
     about:
-      "Passionate developer focused on creating clean, maintainable solutions with modern technologies. I love building beautiful, functional applications that make a difference.",
+      'Passionate developer focused on creating clean, maintainable solutions with modern technologies. I love building beautiful, functional applications that make a difference.',
     skills: [
-      { name: ".NET / C#", icon: "/brands/dotnet.svg" },
-      { name: "Flutter", icon: "/brands/flutter.svg" },
-      { name: "React", icon: "/brands/react.svg" },
-      { name: "Next.js", icon: "/brands/nextjs.svg" },
-      { name: "TypeScript", icon: "/brands/typescript.svg" },
-      { name: "Supabase", icon: "/brands/supabase.svg" },
+      { name: '.NET / C#', icon: '/brands/dotnet.svg' },
+      { name: 'Flutter', icon: '/brands/flutter.svg' },
+      { name: 'React', icon: '/brands/react.svg' },
+      { name: 'Next.js', icon: '/brands/nextjs.svg' },
+      { name: 'TypeScript', icon: '/brands/typescript.svg' },
+      { name: 'Supabase', icon: '/brands/supabase.svg' },
     ],
   };
 
@@ -30,11 +30,11 @@ const ResumeLanding = () => {
         <div className="absolute -top-20 -right-20 md:-top-40 md:-right-40 w-40 h-40 md:w-80 md:h-80 bg-gradient-to-br from-purple-400/20 to-blue-600/20 rounded-full blur-3xl animate-float"></div>
         <div
           className="absolute top-1/2 -left-20 md:-left-40 w-32 h-32 md:w-60 md:h-60 bg-gradient-to-br from-emerald-400/20 to-cyan-600/20 rounded-full blur-3xl animate-float"
-          style={{ animationDelay: "2s" }}
+          style={{ animationDelay: '2s' }}
         ></div>
         <div
           className="absolute bottom-0 right-1/3 w-36 h-36 md:w-72 md:h-72 bg-gradient-to-br from-amber-400/20 to-orange-600/20 rounded-full blur-3xl animate-float"
-          style={{ animationDelay: "4s" }}
+          style={{ animationDelay: '4s' }}
         ></div>
       </div>
 
@@ -50,26 +50,26 @@ const ResumeLanding = () => {
             </h1>
           </div>
           <div className="hidden md:flex gap-2">
-            {["about", "skills", "contact"].map((section) => (
+            {['about', 'skills', 'contact'].map(section => (
               <Button
                 key={section}
                 variant="ghost"
                 onClick={() => {
                   document
                     .getElementById(section)
-                    ?.scrollIntoView({ behavior: "smooth" });
+                    ?.scrollIntoView({ behavior: 'smooth' });
                 }}
                 className="capitalize hover:bg-white/50 transition-all duration-300"
               >
-                {section === "about" && <Sparkles className="w-4 h-4 mr-1" />}
-                {section === "skills" && <Zap className="w-4 h-4 mr-1" />}
-                {section === "contact" && <Mail className="w-4 h-4 mr-1" />}
+                {section === 'about' && <Sparkles className="w-4 h-4 mr-1" />}
+                {section === 'skills' && <Zap className="w-4 h-4 mr-1" />}
+                {section === 'contact' && <Mail className="w-4 h-4 mr-1" />}
                 {section}
               </Button>
             ))}
           </div>
           <div className="md:hidden flex gap-1">
-            {["about", "skills", "contact"].map((section) => (
+            {['about', 'skills', 'contact'].map(section => (
               <Button
                 key={section}
                 variant="ghost"
@@ -77,13 +77,13 @@ const ResumeLanding = () => {
                 onClick={() => {
                   document
                     .getElementById(section)
-                    ?.scrollIntoView({ behavior: "smooth" });
+                    ?.scrollIntoView({ behavior: 'smooth' });
                 }}
                 className="p-2 hover:bg-white/50 transition-all duration-300"
               >
-                {section === "about" && <Sparkles className="w-4 h-4" />}
-                {section === "skills" && <Zap className="w-4 h-4" />}
-                {section === "contact" && <Mail className="w-4 h-4" />}
+                {section === 'about' && <Sparkles className="w-4 h-4" />}
+                {section === 'skills' && <Zap className="w-4 h-4" />}
+                {section === 'contact' && <Mail className="w-4 h-4" />}
               </Button>
             ))}
           </div>
@@ -91,7 +91,10 @@ const ResumeLanding = () => {
       </header>
 
       {/* Hero Section */}
-      <section id="about" className="relative max-w-6xl mx-auto px-4 md:px-6 py-16 md:py-32">
+      <section
+        id="about"
+        className="relative max-w-6xl mx-auto px-4 md:px-6 py-16 md:py-32"
+      >
         <div className="text-center relative z-10">
           <div className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-100 to-blue-100 px-3 md:px-4 py-2 rounded-full text-xs md:text-sm font-medium text-purple-700 mb-6 md:mb-8">
             <Sparkles className="w-3 h-3 md:w-4 md:h-4" />
@@ -99,11 +102,11 @@ const ResumeLanding = () => {
           </div>
           <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 md:mb-6 leading-tight">
             <span className="bg-gradient-to-r from-gray-900 via-purple-900 to-blue-900 bg-clip-text text-transparent">
-              {personalInfo.title.split(" ")[0]}
+              {personalInfo.title.split(' ')[0]}
             </span>
             <br />
             <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent animate-gradient">
-              {personalInfo.title.split(" ")[1]}
+              {personalInfo.title.split(' ')[1]}
             </span>
           </h2>
           <p className="text-lg md:text-xl text-gray-600 mb-8 md:mb-12 max-w-3xl mx-auto leading-relaxed px-2">
@@ -159,7 +162,7 @@ const ResumeLanding = () => {
               >
                 <CardContent className="p-6 md:p-8 text-center">
                   <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
-                    {skill.icon.startsWith("/") ? (
+                    {skill.icon.startsWith('/') ? (
                       <Image
                         src={skill.icon}
                         alt={`${skill.name} icon`}
