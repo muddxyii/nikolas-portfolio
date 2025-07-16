@@ -96,10 +96,6 @@ const ResumeLanding = () => {
         className="relative max-w-6xl mx-auto px-4 md:px-6 py-16 md:py-32"
       >
         <div className="text-center relative z-10">
-          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-100 to-blue-100 px-3 md:px-4 py-2 rounded-full text-xs md:text-sm font-medium text-purple-700 mb-6 md:mb-8">
-            <Sparkles className="w-3 h-3 md:w-4 md:h-4" />
-            Available for new opportunities
-          </div>
           <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 md:mb-6 leading-tight">
             <span className="bg-gradient-to-r from-gray-900 via-purple-900 to-blue-900 bg-clip-text text-transparent">
               {personalInfo.title.split(' ')[0]}
