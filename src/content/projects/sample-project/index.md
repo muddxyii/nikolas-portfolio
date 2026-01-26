@@ -1,9 +1,9 @@
 ---
-title: "Sample Project"
-date: "2026-01-15"
-description: "A sample project to test the markdown system"
-thumbnail: "thumbnail.svg"
-tags: ["SvelteKit", "TypeScript"]
+title: 'Sample Project'
+date: '2026-01-15'
+description: 'A sample project to test the markdown system'
+thumbnail: 'thumbnail.svg'
+tags: ['SvelteKit', 'TypeScript']
 ---
 
 This is a sample project to demonstrate the markdown content system.

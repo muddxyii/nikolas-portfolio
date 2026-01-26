@@ -11,19 +11,21 @@
 	}
 </script>
 
-<a href="/projects/{project.slug}" class="block group hover:no-underline">
-	<article class="border border-border rounded-lg overflow-hidden hover:border-accent transition-colors">
+<a href="/projects/{project.slug}" class="group block hover:no-underline">
+	<article
+		class="overflow-hidden rounded-lg border border-border transition-colors hover:border-accent"
+	>
 		<div class="aspect-[4/3] bg-gray-100">
-			<div class="w-full h-full flex items-center justify-center text-text-secondary">
+			<div class="flex h-full w-full items-center justify-center text-text-secondary">
 				{project.title}
 			</div>
 		</div>
 		<div class="p-4">
-			<h2 class="font-semibold text-text-primary group-hover:text-accent transition-colors">
+			<h2 class="font-semibold text-text-primary transition-colors group-hover:text-accent">
 				{project.title}
 			</h2>
-			<p class="text-sm text-text-secondary mt-1">{formatDate(project.date)}</p>
-			<p class="text-text-secondary mt-2 text-sm line-clamp-2">{project.description}</p>
+			<p class="mt-1 text-sm text-text-secondary">{formatDate(project.date)}</p>
+			<p class="mt-2 line-clamp-2 text-sm text-text-secondary">{project.description}</p>
 		</div>
 	</article>
 </a>

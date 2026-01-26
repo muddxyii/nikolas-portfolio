@@ -8,13 +8,13 @@
 	<title>Projects | Nikolas Padilla</title>
 </svelte:head>
 
-<div class="px-6 py-12 max-w-3xl mx-auto">
-	<h1 class="text-3xl font-bold tracking-tight mb-8">Projects</h1>
+<div class="mx-auto max-w-3xl px-6 py-12">
+	<h1 class="mb-8 text-3xl font-bold tracking-tight">Projects</h1>
 
 	{#if data.projects.length === 0}
 		<p class="text-text-secondary">No projects yet.</p>
 	{:else}
-		<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+		<div class="grid grid-cols-1 gap-6 md:grid-cols-2">
 			{#each data.projects as project}
 				<ProjectCard {project} />
 			{/each}
