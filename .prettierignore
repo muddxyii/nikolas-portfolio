@@ -1,37 +1,9 @@
-# Dependencies
-node_modules/
-
-# Build outputs
-dist/
-build/
-
-# Logs
-*.log
-
-# Environment files
-.env
-.env.local
-.env.production.local
-.env.test.local
-
-# OS generated files
-.DS_Store
-Thumbs.db
-
-# IDE files
-.vscode/
-.idea/
-*.swp
-*.swo
-
-# Package manager
+# Package Managers
 package-lock.json
-yarn.lock
 pnpm-lock.yaml
+yarn.lock
+bun.lock
+bun.lockb
 
-# Coverage reports
-coverage/
-
-# Generated files
-*.min.js
-*.min.css
+# Miscellaneous
+/static/
