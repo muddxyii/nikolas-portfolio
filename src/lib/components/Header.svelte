@@ -35,7 +35,7 @@
 
 <header>
 	<div
-		class="mx-auto flex max-w-3xl items-center justify-between border-b border-text-primary/20 px-6 py-6"
+		class="mx-6 flex max-w-3xl items-center justify-between border-b border-text-primary/20 py-6 md:mx-auto md:px-6"
 	>
 		<div class="flex items-center gap-1 text-xl font-semibold">
 			{#if $page.url.pathname === '/'}
