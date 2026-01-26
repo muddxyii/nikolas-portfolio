@@ -15,7 +15,7 @@
 		<p class="text-text-secondary">No projects yet.</p>
 	{:else}
 		<div class="grid grid-cols-1 gap-6 md:grid-cols-2">
-			{#each data.projects as project}
+			{#each data.projects as project (project.slug)}
 				<ProjectCard {project} />
 			{/each}
 		</div>

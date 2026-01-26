@@ -25,7 +25,7 @@
 
 		{#if meta.tags.length > 0}
 			<div class="flex flex-wrap gap-2">
-				{#each meta.tags as tag}
+				{#each meta.tags as tag (tag)}
 					<span class="rounded bg-gray-100 px-2 py-1 text-xs text-text-secondary">{tag}</span>
 				{/each}
 			</div>

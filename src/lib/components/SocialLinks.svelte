@@ -1,20 +1,21 @@
-<script lang="ts">
-	const links = [
-		{ href: 'https://github.com/muddxyii', label: 'GitHub' },
-		{ href: 'https://linkedin.com/in/nikolaspadilla', label: 'LinkedIn' },
-		{ href: 'mailto:contact@nikolaspadilla.com', label: 'Email' }
-	];
-</script>
-
 <div class="flex gap-6">
-	{#each links as { href, label }}
-		<a
-			{href}
-			target={href.startsWith('mailto') ? undefined : '_blank'}
-			rel={href.startsWith('mailto') ? undefined : 'noopener noreferrer'}
-			class="text-text-secondary hover:text-accent"
-		>
-			{label}
-		</a>
-	{/each}
+	<a
+		href="https://github.com/muddxyii"
+		target="_blank"
+		rel="noopener noreferrer"
+		class="text-text-secondary hover:text-accent"
+	>
+		GitHub
+	</a>
+	<a
+		href="https://linkedin.com/in/nikolaspadilla"
+		target="_blank"
+		rel="noopener noreferrer"
+		class="text-text-secondary hover:text-accent"
+	>
+		LinkedIn
+	</a>
+	<a href="mailto:contact@nikolaspadilla.com" class="text-text-secondary hover:text-accent">
+		Email
+	</a>
 </div>

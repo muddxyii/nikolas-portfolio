@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { resolve } from '$app/paths';
 	import type { ProjectMeta } from '$lib/projects';
 
 	let { project }: { project: ProjectMeta } = $props();
@@ -11,7 +12,10 @@
 	}
 </script>
 
-<a href="/projects/{project.slug}" class="group block hover:no-underline">
+<a
+	href={resolve('/projects/[slug]', { slug: project.slug })}
+	class="group block hover:no-underline"
+>
 	<article
 		class="overflow-hidden rounded-lg border border-border transition-colors hover:border-accent"
 	>
