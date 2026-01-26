@@ -1,7 +1,8 @@
 <script lang="ts">
 	let { data } = $props();
 
-	const { meta, content } = data.project;
+	const meta = $derived(data.project.meta);
+	const Content = $derived(data.project.content);
 
 	function formatDate(dateStr: string): string {
 		return new Date(dateStr).toLocaleDateString('en-US', {
@@ -32,6 +33,6 @@
 	</header>
 
 	<div class="prose prose-neutral max-w-none">
-		<svelte:component this={content} />
+		<Content />
 	</div>
 </article>
