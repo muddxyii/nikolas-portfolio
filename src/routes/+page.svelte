@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { resolve } from '$app/paths';
+
 	const skills = ['TypeScript', 'PostgreSQL', 'Flutter'];
 </script>
 
@@ -15,7 +17,7 @@
 			<p class="mb-4 text-text-secondary">Software Engineer</p>
 
 			<div class="mb-4 flex flex-wrap gap-2">
-				{#each skills as skill}
+				{#each skills as skill (skill)}
 					<span class="rounded border border-border px-2 py-0.5 text-xs text-text-secondary"
 						>{skill}</span
 					>
@@ -24,13 +26,13 @@
 
 			<div class="flex flex-wrap gap-2">
 				<a
-					href="/projects"
+					href={resolve('/projects')}
 					class="rounded border border-accent px-3 py-1.5 text-xs font-medium text-accent hover:bg-accent/10 hover:no-underline"
 				>
 					View Projects
 				</a>
 				<a
-					href="/resume.pdf"
+					href={resolve('/resume.pdf')}
 					target="_blank"
 					class="rounded border border-accent px-3 py-1.5 text-xs font-medium text-accent hover:bg-accent/10 hover:no-underline"
 				>
@@ -49,7 +51,7 @@
 			architecture.
 		</p>
 		<p>
-			<a href="/projects/sample-project" class="text-accent hover:underline">
+			<a href={resolve('/projects/sample-project')} class="text-accent hover:underline">
 				Curious? Read more...
 			</a>
 		</p>
