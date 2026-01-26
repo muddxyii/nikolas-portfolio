@@ -4,6 +4,10 @@
 	const skills = ['TypeScript', 'PostgreSQL', 'Flutter'];
 </script>
 
+<svelte:head>
+	<title>Nikolas Padilla | Software Engineer</title>
+</svelte:head>
+
 <div class="mx-auto grid max-w-3xl items-start gap-12 px-6 py-24 md:grid-cols-[280px,1fr]">
 	<!-- Sidebar -->
 	<aside class="flex gap-6">
