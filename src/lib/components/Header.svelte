@@ -35,9 +35,9 @@
 
 <header>
 	<div
-		class="mx-6 flex max-w-3xl items-center justify-between border-b border-text-primary/20 py-6 md:mx-auto md:px-6"
+		class="mx-6 flex max-w-3xl items-center justify-between gap-8 border-b border-text-primary/20 py-6 md:mx-auto md:px-6"
 	>
-		<div class="flex items-center gap-1 text-xl font-semibold">
+		<div class="flex min-w-0 items-center gap-1 text-xl font-semibold">
 			{#if $page.url.pathname === '/'}
 				<span class="text-text-secondary">NP</span>
 			{:else}
@@ -48,11 +48,11 @@
 				{#if crumb.href}
 					<a href={resolve(crumb.href)} class="text-accent hover:no-underline">{crumb.label}</a>
 				{:else}
-					<span class="text-text-secondary">{crumb.label}</span>
+					<span class="truncate text-text-secondary">{crumb.label}</span>
 				{/if}
 			{/each}
 		</div>
-		<nav class="flex gap-6">
+		<nav class="flex shrink-0 gap-6">
 			{#each navItems as item (item.href)}
 				{#if isActive($page.url.pathname, item.href)}
 					<span class="text-text-secondary underline underline-offset-4">
