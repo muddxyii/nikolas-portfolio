@@ -5,9 +5,10 @@
 	let { project }: { project: ProjectMeta } = $props();
 
 	function formatDate(dateStr: string): string {
-		return new Date(dateStr).toLocaleDateString('en-US', {
+		return new Date(dateStr + 'T00:00').toLocaleDateString('en-US', {
 			month: 'short',
-			year: 'numeric'
+			year: 'numeric',
+			timeZone: 'America/Phoenix'
 		});
 	}
 </script>

@@ -24,7 +24,9 @@ export async function getProjects(): Promise<ProjectMeta[]> {
 	}
 
 	// Sort by date, newest first
-	return projects.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+	return projects.sort(
+		(a, b) => new Date(b.date + 'T00:00').getTime() - new Date(a.date + 'T00:00').getTime()
+	);
 }
 
 export async function getProject(slug: string) {
