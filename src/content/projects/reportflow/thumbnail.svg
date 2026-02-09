@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300">
+  <rect fill="#0D1B2A" width="400" height="300" rx="8"/>
+  <rect x="60" y="60" width="160" height="200" rx="12" fill="#1B2838" stroke="#3B82F6" stroke-width="1.5"/>
+  <rect x="76" y="90" width="128" height="8" rx="4" fill="#3B82F6" opacity="0.7"/>
+  <rect x="76" y="108" width="96" height="6" rx="3" fill="#64748B" opacity="0.5"/>
+  <rect x="76" y="124" width="112" height="6" rx="3" fill="#64748B" opacity="0.5"/>
+  <rect x="76" y="148" width="128" height="24" rx="4" fill="#1E3A5F"/>
+  <circle cx="88" cy="160" r="4" fill="#22C55E"/>
+  <rect x="98" y="156" width="60" height="8" rx="4" fill="#22C55E" opacity="0.6"/>
+  <rect x="76" y="180" width="128" height="24" rx="4" fill="#1E3A5F"/>
+  <circle cx="88" cy="192" r="4" fill="#22C55E"/>
+  <rect x="98" y="188" width="48" height="8" rx="4" fill="#22C55E" opacity="0.6"/>
+  <rect x="76" y="212" width="128" height="24" rx="4" fill="#1E3A5F"/>
+  <circle cx="88" cy="224" r="4" fill="#EF4444"/>
+  <rect x="98" y="220" width="72" height="8" rx="4" fill="#EF4444" opacity="0.6"/>
+  <rect x="260" y="100" width="100" height="130" rx="6" fill="#1B2838" stroke="#64748B" stroke-width="1" opacity="0.7"/>
+  <text x="310" y="135" text-anchor="middle" fill="#94A3B8" font-family="sans-serif" font-size="9" font-weight="600">PDF</text>
+  <rect x="274" y="148" width="72" height="4" rx="2" fill="#475569" opacity="0.5"/>
+  <rect x="274" y="158" width="56" height="4" rx="2" fill="#475569" opacity="0.5"/>
+  <rect x="274" y="168" width="64" height="4" rx="2" fill="#475569" opacity="0.5"/>
+  <rect x="274" y="184" width="72" height="4" rx="2" fill="#475569" opacity="0.5"/>
+  <rect x="274" y="194" width="48" height="4" rx="2" fill="#475569" opacity="0.5"/>
+  <path d="M220 160 L260 160" stroke="#3B82F6" stroke-width="2" stroke-dasharray="4 3" opacity="0.6"/>
+  <polygon points="256,156 264,160 256,164" fill="#3B82F6" opacity="0.6"/>
+</svg>
