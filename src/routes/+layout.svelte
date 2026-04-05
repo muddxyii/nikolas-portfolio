@@ -9,6 +9,7 @@ let { children } = $props();
 
 <svelte:head>
 	<link rel="icon" href={favicon} />
+	<link rel="preload" as="image" href="/headshot.webp" />
 </svelte:head>
 
 <div class="flex min-h-screen flex-col">

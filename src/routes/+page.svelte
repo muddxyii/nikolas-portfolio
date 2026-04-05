@@ -11,7 +11,7 @@ const jsonLd = JSON.stringify({
 	name: 'Nikolas Padilla',
 	jobTitle: 'Software Engineer',
 	url: siteConfig.url,
-	image: `${siteConfig.url}/headshot.jpg`
+	image: `${siteConfig.url}/headshot.webp`
 });
 </script>
 
@@ -25,9 +25,12 @@ const jsonLd = JSON.stringify({
 	<!-- Sidebar -->
 	<aside class="flex gap-6">
 		<img
-			src="/headshot.jpg"
+			src="/headshot.webp"
 			alt="Nikolas Padilla"
 			class="h-24 w-24 shrink-0 rounded-full object-cover"
+			width="96"
+			height="96"
+			fetchpriority="high"
 		/>
 		<div>
 			<h1 class="mb-1 text-2xl font-bold tracking-tight">Nikolas Padilla</h1>
