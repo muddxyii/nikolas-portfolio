@@ -1,17 +1,17 @@
 <script lang="ts">
-	let { data } = $props();
+let { data } = $props();
 
-	const meta = $derived(data.project.meta);
-	const Content = $derived(data.project.content);
+const meta = $derived(data.project.meta);
+const Content = $derived(data.project.content);
 
-	function formatDate(dateStr: string): string {
-		return new Date(dateStr + 'T00:00').toLocaleDateString('en-US', {
-			month: 'long',
-			day: 'numeric',
-			year: 'numeric',
-			timeZone: 'America/Phoenix'
-		});
-	}
+function formatDate(dateStr: string): string {
+	return new Date(`${dateStr}T00:00`).toLocaleDateString('en-US', {
+		month: 'long',
+		day: 'numeric',
+		year: 'numeric',
+		timeZone: 'America/Phoenix'
+	});
+}
 </script>
 
 <svelte:head>

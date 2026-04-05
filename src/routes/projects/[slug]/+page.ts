@@ -1,5 +1,5 @@
-import { getProject } from '$lib/projects';
 import { error } from '@sveltejs/kit';
+import { getProject } from '$lib/projects';
 
 export async function load({ params }) {
 	const project = await getProject(params.slug);

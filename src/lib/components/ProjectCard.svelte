@@ -1,16 +1,16 @@
 <script lang="ts">
-	import { resolve } from '$app/paths';
-	import type { ProjectMeta } from '$lib/projects';
+import { resolve } from '$app/paths';
+import type { ProjectMeta } from '$lib/projects';
 
-	let { project }: { project: ProjectMeta } = $props();
+let { project }: { project: ProjectMeta } = $props();
 
-	function formatDate(dateStr: string): string {
-		return new Date(dateStr + 'T00:00').toLocaleDateString('en-US', {
-			month: 'short',
-			year: 'numeric',
-			timeZone: 'America/Phoenix'
-		});
-	}
+function formatDate(dateStr: string): string {
+	return new Date(`${dateStr}T00:00`).toLocaleDateString('en-US', {
+		month: 'short',
+		year: 'numeric',
+		timeZone: 'America/Phoenix'
+	});
+}
 </script>
 
 <a

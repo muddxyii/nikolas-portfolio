@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { resolve } from '$app/paths';
+import { resolve } from '$app/paths';
 
-	const skills = ['TypeScript', 'PostgreSQL', 'Flutter'];
+const skills = ['TypeScript', 'PostgreSQL', 'Flutter'];
 </script>
 
 <svelte:head>

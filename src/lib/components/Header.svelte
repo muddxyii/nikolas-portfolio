@@ -1,36 +1,36 @@
 <script lang="ts">
-	import { page } from '$app/stores';
-	import { resolve } from '$app/paths';
+import { resolve } from '$app/paths';
+import { page } from '$app/stores';
 
-	const navItems = [
-		{ href: '/', label: 'Home' },
-		{ href: '/projects', label: 'Projects' }
-	];
+const navItems = [
+	{ href: '/', label: 'Home' },
+	{ href: '/projects', label: 'Projects' }
+];
 
-	function isActive(pathname: string, href: string): boolean {
-		return pathname === href;
-	}
+function isActive(pathname: string, href: string): boolean {
+	return pathname === href;
+}
 
-	interface Breadcrumb {
-		label: string;
-		href: string | null;
-	}
+interface Breadcrumb {
+	label: string;
+	href: string | null;
+}
 
-	function getBreadcrumbs(pathname: string, pageData: App.PageData): Breadcrumb[] {
-		const crumbs: Breadcrumb[] = [];
+function getBreadcrumbs(pathname: string, pageData: App.PageData): Breadcrumb[] {
+	const crumbs: Breadcrumb[] = [];
 
-		if (pathname.startsWith('/projects')) {
-			// Check if we're on a specific project page
-			if (pathname !== '/projects' && pageData.project?.meta?.title) {
-				crumbs.push({ label: 'Projects', href: '/projects' });
-				crumbs.push({ label: pageData.project.meta.title, href: null });
-			} else {
-				crumbs.push({ label: 'Projects', href: null });
-			}
+	if (pathname.startsWith('/projects')) {
+		// Check if we're on a specific project page
+		if (pathname !== '/projects' && pageData.project?.meta?.title) {
+			crumbs.push({ label: 'Projects', href: '/projects' });
+			crumbs.push({ label: pageData.project.meta.title, href: null });
+		} else {
+			crumbs.push({ label: 'Projects', href: null });
 		}
-
-		return crumbs;
 	}
+
+	return crumbs;
+}
 </script>
 
 <header>
