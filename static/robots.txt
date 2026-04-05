@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://nikolaspadilla.dev/sitemap.xml
+Sitemap: https://nikolaspadilla.com/sitemap.xml
