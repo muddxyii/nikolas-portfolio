@@ -36,7 +36,7 @@ const skills = ['TypeScript', 'PostgreSQL', 'Flutter'];
 					View Projects
 				</a>
 				<a
-					href={resolve('/resume.pdf')}
+					href="/resume.pdf"
 					target="_blank"
 					class="rounded border border-accent px-3 py-1.5 text-xs font-medium text-accent hover:bg-accent/10 hover:no-underline"
 				>

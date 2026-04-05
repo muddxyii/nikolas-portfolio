@@ -39,7 +39,7 @@ export async function getProject(slug: string) {
 
 	const file = (await projectFiles[path]()) as {
 		metadata: Omit<ProjectMeta, 'slug'>;
-		default: unknown;
+		default: import('svelte').Component;
 	};
 
 	return {

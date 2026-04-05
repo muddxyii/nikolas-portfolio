@@ -1,5 +1,4 @@
 <script lang="ts">
-import { resolve } from '$app/paths';
 import { page } from '$app/stores';
 
 const navItems = [
@@ -16,14 +15,15 @@ interface Breadcrumb {
 	href: string | null;
 }
 
-function getBreadcrumbs(pathname: string, pageData: App.PageData): Breadcrumb[] {
+function getBreadcrumbs(pathname: string, pageData: Record<string, unknown>): Breadcrumb[] {
 	const crumbs: Breadcrumb[] = [];
 
 	if (pathname.startsWith('/projects')) {
 		// Check if we're on a specific project page
-		if (pathname !== '/projects' && pageData.project?.meta?.title) {
+		const project = pageData.project as { meta: { title: string } } | undefined;
+		if (pathname !== '/projects' && project?.meta?.title) {
 			crumbs.push({ label: 'Projects', href: '/projects' });
-			crumbs.push({ label: pageData.project.meta.title, href: null });
+			crumbs.push({ label: project.meta.title, href: null });
 		} else {
 			crumbs.push({ label: 'Projects', href: null });
 		}
@@ -41,12 +41,12 @@ function getBreadcrumbs(pathname: string, pageData: App.PageData): Breadcrumb[] 
 			{#if $page.url.pathname === '/'}
 				<span class="text-text-secondary">NP</span>
 			{:else}
-				<a href={resolve('/')} class="text-accent hover:no-underline">NP</a>
+				<a href="/" class="text-accent hover:no-underline">NP</a>
 			{/if}
 			{#each getBreadcrumbs($page.url.pathname, $page.data) as crumb (crumb.label)}
 				<span class="text-text-secondary">/</span>
 				{#if crumb.href}
-					<a href={resolve(crumb.href)} class="text-accent hover:no-underline">{crumb.label}</a>
+					<a href={crumb.href} class="text-accent hover:no-underline">{crumb.label}</a>
 				{:else}
 					<span class="truncate text-text-secondary">{crumb.label}</span>
 				{/if}
@@ -59,7 +59,7 @@ function getBreadcrumbs(pathname: string, pageData: App.PageData): Breadcrumb[] 
 						{item.label.toLowerCase()}
 					</span>
 				{:else}
-					<a href={resolve(item.href)} class="text-text-secondary hover:text-text-primary">
+					<a href={item.href} class="text-text-secondary hover:text-text-primary">
 						{item.label.toLowerCase()}
 					</a>
 				{/if}
