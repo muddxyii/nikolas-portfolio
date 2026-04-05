@@ -63,7 +63,7 @@ const jsonLd = JSON.stringify({
 	<div>
 		<p class="mb-6 leading-relaxed text-text-primary">
 			Currently leading software development at AnyBackFlow.com, a backflow services company in
-			Arizona. Building the ReportFlow platform — a unified system connecting field technicians and
+			Arizona. Building the ReportFlow platform, a unified system connecting field technicians and
 			office operations. Rewriting the existing mobile app into a full platform with shared database
 			architecture.
 		</p>
