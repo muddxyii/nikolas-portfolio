@@ -9,8 +9,6 @@ let { children } = $props();
 
 <svelte:head>
 	<link rel="icon" href={favicon} />
-	<title>Nikolas Padilla | Software Engineer</title>
-	<meta name="description" content="Personal portfolio showcasing software development projects" />
 </svelte:head>
 
 <div class="flex min-h-screen flex-col">

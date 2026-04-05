@@ -1,4 +1,6 @@
 <script lang="ts">
+import SEO from '$lib/components/SEO.svelte';
+
 let { data } = $props();
 
 const meta = $derived(data.project.meta);
@@ -14,10 +16,7 @@ function formatDate(dateStr: string): string {
 }
 </script>
 
-<svelte:head>
-	<title>{meta.title} | Nikolas Padilla</title>
-	<meta name="description" content={meta.description} />
-</svelte:head>
+<SEO title="{meta.title} | Nikolas Padilla" description={meta.description} type="article" />
 
 <article class="mx-auto max-w-2xl px-6 py-12">
 	<header class="mb-8">

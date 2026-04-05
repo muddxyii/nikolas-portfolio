@@ -1,12 +1,14 @@
 <script lang="ts">
 import ProjectCard from '$lib/components/ProjectCard.svelte';
+import SEO from '$lib/components/SEO.svelte';
 
 let { data } = $props();
 </script>
 
-<svelte:head>
-	<title>Projects | Nikolas Padilla</title>
-</svelte:head>
+<SEO
+	title="Projects | Nikolas Padilla"
+	description="A collection of software projects by Nikolas Padilla, including mobile apps, web platforms, and more."
+/>
 
 <div class="mx-auto max-w-3xl px-6 py-12">
 	<h1 class="mb-8 text-3xl font-bold tracking-tight">Projects</h1>

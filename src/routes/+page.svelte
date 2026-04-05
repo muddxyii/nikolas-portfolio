@@ -1,11 +1,24 @@
 <script lang="ts">
 import { resolve } from '$app/paths';
+import SEO from '$lib/components/SEO.svelte';
+import { siteConfig } from '$lib/config';
 
 const skills = ['TypeScript', 'PostgreSQL', 'Flutter'];
+
+const jsonLd = JSON.stringify({
+	'@context': 'https://schema.org',
+	'@type': 'Person',
+	name: 'Nikolas Padilla',
+	jobTitle: 'Software Engineer',
+	url: siteConfig.url,
+	image: `${siteConfig.url}/headshot.jpg`
+});
 </script>
 
+<SEO />
+
 <svelte:head>
-	<title>Nikolas Padilla | Software Engineer</title>
+	{@html `<script type="application/ld+json">${jsonLd}</script>`}
 </svelte:head>
 
 <div class="mx-auto grid max-w-3xl items-start gap-12 px-6 py-24 md:grid-cols-[280px,1fr]">
