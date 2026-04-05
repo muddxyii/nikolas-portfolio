@@ -1,42 +1,8 @@
-# sv
+# nikolas-portfolio
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+Hey, I'm Nikolas! Thanks for checking out my portfolio.
 
-## Creating a project
+The goal was to create a minimal site that lets me write semi blog-style posts about my projects using Markdown. Built with SvelteKit, Tailwind CSS, and mdsvex.
 
-If you're seeing this, you've probably already done this step. Congrats!
-
-```sh
-# create a new project
-npx sv create my-app
-```
-
-To recreate this project with the same configuration:
-
-```sh
-# recreate this project
-bun x sv create --template minimal --types ts --add prettier eslint sveltekit-adapter="adapter:static" devtools-json mdsvex mcp="ide:claude-code+setup:local" tailwindcss="plugins:none" --install bun .
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```sh
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```sh
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+## Feedback
+Got ideas to make this portfolio better? I'd love to hear them, [open an issue](https://github.com/muddxyii/nikolas-portfolio/issues/new)!
