@@ -17,7 +17,7 @@ export interface ProjectMeta {
 function extractToc(raw: string): TocEntry[] {
 	const entries: TocEntry[] = [];
 	const lines = raw.split('\n');
-	let inFrontmatter = false;
+	let _inFrontmatter = false;
 	let frontmatterDone = false;
 	let fenceCount = 0;
 
@@ -25,8 +25,11 @@ function extractToc(raw: string): TocEntry[] {
 		if (!frontmatterDone) {
 			if (line.trim() === '---') {
 				fenceCount++;
-				if (fenceCount === 1) inFrontmatter = true;
-				else if (fenceCount === 2) { inFrontmatter = false; frontmatterDone = true; }
+				if (fenceCount === 1) _inFrontmatter = true;
+				else if (fenceCount === 2) {
+					_inFrontmatter = false;
+					frontmatterDone = true;
+				}
 			}
 			continue;
 		}
