@@ -59,8 +59,8 @@ I designed the platform for multi-tenancy from day one. Every query is scoped to
 
 ## Current Status
 
-Alpha 1.0 shipped in late March 2026, marking the platform as feature-complete for the core backflow testing workflow. The office staff at AnyBackFlow have been using it in production since then, and real-world usage has driven almost daily improvements: a phone intake wizard for handling calls, a redesigned submission queue, an inbox bell for assigned work, photo labeling and folder assignment for the review panel, and a stream of fixes as the app encounters edge cases that no prototype ever surfaces.
+The core backflow testing workflow reached feature-complete in late March 2026. The platform is currently in manager review at AnyBackFlow, being validated before rolling out to the rest of the team in beta. That review process has driven almost daily improvements: a phone intake wizard for handling calls, a redesigned submission queue, an inbox bell for assigned work, photo labeling and folder assignment for the review panel, and a stream of fixes as the app encounters edge cases that no prototype ever surfaces.
 
-The current focus is stability and polish before opening the platform to other companies. The remaining roadmap items are QuickBooks integration for invoicing and a Capacitor-based rewrite of the mobile app so the entire system lives in one monorepo and shares types and validators end to end.
+Once the manager signs off, the plan is to open it to the full office team, then eventually to other backflow testing companies. The remaining roadmap items before that are QuickBooks integration for invoicing and a Capacitor-based rewrite of the mobile app so the entire system lives in one monorepo and shares types and validators end to end.
 
 The progression from a Next.js prototype to a Vue app to the current platform took about a year and a half. Each version failed at a specific thing and taught me exactly what the next one needed to be. The current stack feels right in a way the previous ones never did, not because it is more impressive technology, but because every piece of it exists for a concrete reason.
