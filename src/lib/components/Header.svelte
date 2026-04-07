@@ -35,7 +35,7 @@ function getBreadcrumbs(pathname: string, pageData: Record<string, unknown>): Br
 
 <header>
 	<div
-		class="mx-6 flex max-w-3xl items-center justify-between gap-8 border-b border-text-primary/20 py-6 md:mx-auto md:px-6"
+		class="mx-6 flex items-center justify-between gap-8 border-b border-text-primary/20 py-6 transition-[max-width] duration-300 ease-in-out md:mx-auto md:px-6 {/^\/projects\/.+/.test($page.url.pathname) ? 'max-w-5xl' : 'max-w-3xl'}"
 	>
 		<div class="flex min-w-0 items-center gap-1 text-xl font-semibold">
 			{#if $page.url.pathname === '/'}

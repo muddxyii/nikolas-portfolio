@@ -1,6 +1,7 @@
 ---
 title: 'ReportFlow: Building a Better Tool for Backflow Testers'
-date: '2026-04-04'
+date: '2026-02-08'
+updated: '2026-04-04'
 description: 'How I went from hitting walls with .NET MAUI to shipping a production Flutter app for the backflow testing industry.'
 thumbnail: 'thumbnail.svg'
 tags: ['Flutter', 'Dart', 'Riverpod', 'Android']

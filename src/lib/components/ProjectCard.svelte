@@ -29,7 +29,14 @@ function formatDate(dateStr: string): string {
 			<h2 class="font-semibold text-text-primary transition-colors group-hover:text-accent">
 				{project.title}
 			</h2>
-			<p class="mt-1 text-sm text-text-secondary">{formatDate(project.date)}</p>
+			<div class="mt-1">
+				{#if project.updated}
+					<p class="text-sm text-text-secondary">Updated {formatDate(project.updated)}</p>
+					<p class="text-xs text-text-secondary/50">Published {formatDate(project.date)}</p>
+				{:else}
+					<p class="text-sm text-text-secondary">{formatDate(project.date)}</p>
+				{/if}
+			</div>
 			<p class="mt-2 line-clamp-2 text-sm text-text-secondary">{project.description}</p>
 		</div>
 	</article>
