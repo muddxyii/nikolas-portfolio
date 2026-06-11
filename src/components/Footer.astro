@@ -1,0 +1,21 @@
+---
+import SocialLinks from "./SocialLinks.astro";
+
+interface Props {
+  pathname: string;
+}
+
+const { pathname } = Astro.props;
+const normalizedPath = pathname.replace(/\/$/, "") || "/";
+const maxWidthClass = /^\/projects\/.+/.test(normalizedPath) ? "max-w-5xl" : "max-w-3xl";
+---
+
+<footer>
+  <div
+    class={`mx-6 flex flex-col items-center gap-4 border-t border-text-primary/20 py-8 transition-[max-width] duration-300 ease-in-out md:mx-auto md:px-6 ${maxWidthClass}`}
+    transition:name="site-footer"
+  >
+    <SocialLinks />
+    <p class="text-sm text-text-secondary">&copy; 2026 Nikolas Padilla</p>
+  </div>
+</footer>

@@ -1,0 +1,15 @@
+pre-commit:
+  commands:
+    format:
+      glob: "*.{astro,css,html,js,json,jsonc,md,mjs,ts,yaml,yml}"
+      run: pnpm exec prettier --write --ignore-unknown {staged_files}
+      stage_fixed: true
+    lint:
+      glob: "*.{astro,js,mjs,ts}"
+      run: pnpm exec eslint --fix {staged_files}
+      stage_fixed: true
+
+pre-push:
+  commands:
+    verify:
+      run: pnpm verify

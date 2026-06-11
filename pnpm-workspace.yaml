@@ -1,0 +1,12 @@
+packages:
+  - .
+
+allowBuilds:
+  esbuild: true
+  lefthook: true
+  sharp: true
+
+onlyBuiltDependencies:
+  - esbuild
+  - lefthook
+  - sharp

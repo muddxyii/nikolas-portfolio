@@ -1,0 +1,52 @@
+---
+import type { ProjectMeta } from "../lib/projects";
+
+interface Props {
+  project: ProjectMeta;
+  index?: number;
+}
+
+const { project, index = 0 } = Astro.props;
+
+function formatDate(dateStr: string): string {
+  return new Date(`${dateStr}T00:00`).toLocaleDateString("en-US", {
+    month: "short",
+    year: "numeric",
+    timeZone: "America/Phoenix",
+  });
+}
+---
+
+<a
+  href={`/projects/${project.slug}`}
+  class="animate-fade-up group block hover:no-underline"
+  style={`--motion-delay: ${index * 90}ms`}
+>
+  <article class="motion-card overflow-hidden rounded-lg border border-border hover:border-accent">
+    <div class="aspect-[4/3] bg-gray-100">
+      <div
+        class="flex h-full w-full items-center justify-center text-text-secondary transition-transform duration-500 group-hover:scale-[1.03]"
+      >
+        {project.title}
+      </div>
+    </div>
+    <div class="p-4">
+      <h2 class="font-semibold text-text-primary transition-colors group-hover:text-accent">
+        {project.title}
+      </h2>
+      <div class="mt-1">
+        {
+          project.updated ? (
+            <>
+              <p class="text-sm text-text-secondary">Updated {formatDate(project.updated)}</p>
+              <p class="text-xs text-text-secondary/50">Published {formatDate(project.date)}</p>
+            </>
+          ) : (
+            <p class="text-sm text-text-secondary">{formatDate(project.date)}</p>
+          )
+        }
+      </div>
+      <p class="mt-2 line-clamp-2 text-sm text-text-secondary">{project.description}</p>
+    </div>
+  </article>
+</a>

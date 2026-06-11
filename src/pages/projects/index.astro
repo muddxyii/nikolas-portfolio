@@ -1,0 +1,28 @@
+---
+import ProjectCard from "../../components/ProjectCard.astro";
+import Layout from "../../layouts/Layout.astro";
+import { getProjects } from "../../lib/projects";
+
+const projects = await getProjects();
+---
+
+<Layout
+  title="Projects | Nikolas Padilla"
+  description="A collection of software projects by Nikolas Padilla, including mobile apps, web platforms, and more."
+>
+  <div class="animate-page-in mx-auto max-w-3xl px-6 py-12">
+    <h1 class="animate-fade-up mb-8 text-3xl font-bold tracking-tight">Projects</h1>
+
+    {
+      projects.length === 0 ? (
+        <p class="text-text-secondary">No projects yet.</p>
+      ) : (
+        <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+          {projects.map((project, index) => (
+            <ProjectCard project={project} index={index} />
+          ))}
+        </div>
+      )
+    }
+  </div>
+</Layout>

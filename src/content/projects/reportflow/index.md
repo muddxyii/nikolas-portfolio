@@ -1,10 +1,10 @@
 ---
-title: 'ReportFlow: Building a Better Tool for Backflow Testers'
-date: '2026-02-08'
-updated: '2026-04-04'
-description: 'How I went from hitting walls with .NET MAUI to shipping a production Flutter app for the backflow testing industry.'
-thumbnail: 'thumbnail.svg'
-tags: ['Flutter', 'Dart', 'Riverpod', 'Android']
+title: "ReportFlow: Building a Better Tool for Backflow Testers"
+date: "2026-02-08"
+updated: "2026-04-04"
+description: "How I went from hitting walls with .NET MAUI to shipping a production Flutter app for the backflow testing industry."
+thumbnail: "thumbnail.svg"
+tags: ["Flutter", "Dart", "Riverpod", "Android"]
 ---
 
 ReportFlow is a production Flutter app (v3.3.11) used daily by field technicians to replace paper-based backflow inspection reports. It handles job creation, real-time test validation, GPS capture, and professional PDF generation, all from an Android device. It currently processes 1,000+ inspection reports per month, saving technicians an estimated 75% of the time previously spent on paperwork.

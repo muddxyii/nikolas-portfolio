@@ -1,10 +1,10 @@
 ---
-title: 'ReportFlow Platform: Connecting the Field to the Office'
-date: '2026-02-09'
-updated: '2026-04-07'
-description: 'Designing a full-stack platform to digitalize the backflow testing workflow, from field inspections to invoicing.'
-thumbnail: 'thumbnail.svg'
-tags: ['SvelteKit', 'Hono', 'PostgreSQL', 'Bun', 'TypeScript']
+title: "ReportFlow Platform: Connecting the Field to the Office"
+date: "2026-02-09"
+updated: "2026-04-07"
+description: "Designing a full-stack platform to digitalize the backflow testing workflow, from field inspections to invoicing."
+thumbnail: "thumbnail.svg"
+tags: ["SvelteKit", "Hono", "PostgreSQL", "Bun", "TypeScript"]
 ---
 
 ReportFlow Platform is a multi-tenant workflow management system that connects field inspections to office operations for backflow testing companies. It takes submissions directly from the field and handles the downstream process: routing, review, approval, and export for billing, eliminating the manual handoff that currently lives on someone's desk.

@@ -1,0 +1,118 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { getProject, getProjects } from "../../lib/projects";
+
+export async function getStaticPaths() {
+  const projects = await getProjects();
+
+  return projects.map((project) => ({
+    params: { slug: project.slug },
+  }));
+}
+
+const { slug } = Astro.params;
+const project = slug ? await getProject(slug) : null;
+
+if (!project) {
+  return Astro.redirect("/404");
+}
+
+const { meta, content: Content, toc } = project;
+
+function formatDate(dateStr: string): string {
+  return new Date(`${dateStr}T00:00`).toLocaleDateString("en-US", {
+    month: "long",
+    day: "numeric",
+    year: "numeric",
+    timeZone: "America/Phoenix",
+  });
+}
+---
+
+<Layout
+  title={`${meta.title} | Nikolas Padilla`}
+  description={meta.description}
+  type="article"
+  projectTitle={meta.title}
+>
+  <div class="animate-page-in mx-auto max-w-5xl px-6 py-12">
+    <div class="lg:grid lg:grid-cols-[1fr_220px] lg:gap-16">
+      <article>
+        <header class="animate-fade-up mb-10">
+          <h1 class="mb-3 text-3xl font-bold tracking-tight">{meta.title}</h1>
+
+          <div class="mb-5 flex flex-wrap gap-6">
+            <div>
+              <p class="mb-0.5 text-xs font-medium tracking-widest text-text-secondary/50 uppercase">Published</p>
+              <p class="text-sm text-text-secondary">{formatDate(meta.date)}</p>
+            </div>
+            {
+              meta.updated && (
+                <div>
+                  <p class="mb-0.5 text-xs font-medium tracking-widest text-text-secondary/50 uppercase">Updated</p>
+                  <p class="text-sm text-text-secondary">{formatDate(meta.updated)}</p>
+                </div>
+              )
+            }
+          </div>
+
+          {
+            meta.tags.length > 0 && (
+              <div class="flex flex-wrap gap-2">
+                {meta.tags.map((tag) => (
+                  <span class="rounded bg-gray-100 px-2 py-1 text-xs text-text-secondary">{tag}</span>
+                ))}
+              </div>
+            )
+          }
+        </header>
+
+        {
+          toc.length > 0 && (
+            <nav class="mb-10 rounded-lg border border-border bg-gray-50 px-5 py-4 lg:hidden">
+              <p class="mb-3 text-xs font-semibold tracking-widest text-text-secondary uppercase">Contents</p>
+              <ol class="space-y-1.5">
+                {toc.map((entry) => (
+                  <li style={`padding-left: ${(entry.level - 2) * 12}px`}>
+                    <a
+                      href={`#${entry.id}`}
+                      class="text-sm text-text-secondary transition-colors hover:text-text-primary"
+                    >
+                      {entry.text}
+                    </a>
+                  </li>
+                ))}
+              </ol>
+            </nav>
+          )
+        }
+
+        <div class="prose animate-fade-up max-w-none" style="--motion-delay: 140ms">
+          <Content />
+        </div>
+      </article>
+
+      {
+        toc.length > 0 && (
+          <aside class="animate-fade-up hidden lg:block" style="--motion-delay: 220ms">
+            <div class="sticky top-8">
+              <p class="mb-3 text-xs font-semibold tracking-widest text-text-secondary uppercase">Contents</p>
+              <ol class="space-y-2">
+                {toc.map((entry) => (
+                  <li style={`padding-left: ${(entry.level - 2) * 10}px`}>
+                    <a
+                      href={`#${entry.id}`}
+                      class="text-sm leading-snug text-text-secondary transition-colors hover:text-text-primary"
+                    >
+                      {entry.text}
+                    </a>
+                  </li>
+                ))}
+              </ol>
+            </div>
+          </aside>
+        )
+      }
+    </div>
+  </div>
+</Layout>

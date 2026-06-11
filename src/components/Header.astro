@@ -1,0 +1,82 @@
+---
+interface Breadcrumb {
+  label: string;
+  href: string | null;
+}
+
+interface Props {
+  pathname: string;
+  projectTitle?: string;
+}
+
+const { pathname, projectTitle } = Astro.props;
+const normalizedPath = pathname.replace(/\/$/, "") || "/";
+const isProjectDetail = /^\/projects\/.+/.test(normalizedPath);
+const maxWidthClass = isProjectDetail ? "max-w-5xl" : "max-w-3xl";
+
+const navItems = [
+  { href: "/", label: "Home" },
+  { href: "/projects", label: "Projects" },
+];
+
+function getBreadcrumbs(): Breadcrumb[] {
+  if (!normalizedPath.startsWith("/projects")) {
+    return [];
+  }
+
+  if (isProjectDetail && projectTitle) {
+    return [
+      { label: "Projects", href: "/projects" },
+      { label: projectTitle, href: null },
+    ];
+  }
+
+  return [{ label: "Projects", href: null }];
+}
+---
+
+<header>
+  <div
+    class={`mx-6 flex items-center justify-between gap-8 border-b border-text-primary/20 py-6 transition-[max-width] duration-300 ease-in-out md:mx-auto md:px-6 ${maxWidthClass}`}
+    transition:name="site-header"
+  >
+    <div class="flex min-w-0 items-center gap-1 text-xl font-semibold">
+      {
+        normalizedPath === "/" ? (
+          <span class="text-text-secondary">NP</span>
+        ) : (
+          <a href="/" class="motion-link text-accent hover:no-underline">
+            NP
+          </a>
+        )
+      }
+      {
+        getBreadcrumbs().map((crumb) => (
+          <>
+            <span class="text-text-secondary">/</span>
+            {crumb.href ? (
+              <a href={crumb.href} class="motion-link text-accent hover:no-underline">
+                {crumb.label}
+              </a>
+            ) : (
+              <span class="truncate text-text-secondary">{crumb.label}</span>
+            )}
+          </>
+        ))
+      }
+    </div>
+    <nav class="flex shrink-0 gap-6">
+      {
+        navItems.map((item) =>
+          normalizedPath === item.href ? (
+            <span class="text-text-secondary underline underline-offset-4">{item.label.toLowerCase()}</span>
+          ) : (
+            <a href={item.href} class="motion-link text-text-secondary hover:text-text-primary">
+              {item.label.toLowerCase()}
+            </a>
+          ),
+        )
+      }
+    </nav>
+  </div>
+</header>
